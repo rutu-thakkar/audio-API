@@ -8,14 +8,14 @@ const {
   getAudio,
 } = require("../controller/audioController");
 
-var storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./assets/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + file.filename);
-  },
-});
+// var storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "./assets/");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + file.filename);
+//   },
+// });
 
 route.use(fileUpload());
 var upload = multer();
