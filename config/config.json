@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "audiouser",
+    "password": "audiopass",
+    "database": "myaudiodatabase",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "audiouser",
+    "password": "audiopass",
+    "database": "myaudiodatabase",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "audiouser",
+    "password": "audiopass",
+    "database": "myaudiodatabase",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  }
+}
