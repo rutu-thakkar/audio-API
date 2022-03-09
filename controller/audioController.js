@@ -33,7 +33,7 @@ const addAudio = (req, res) => {
       db.audioDetails
         .create({
           filename: Date.now() + "-" + req.files["audioFile"].name,
-          fileURl: "./assets/" + req.files["audioFile"].name,
+          fileURL: "./assets/" + req.files["audioFile"].name,
           duration: duration,
         })
         .then((data) => {
