@@ -6,7 +6,7 @@ const getAudios = (req, res) => {
       res.json({ message: "No audio details found" });
       return;
     }
-    res.json({ data });
+    res.send(data);
   });
 };
 
