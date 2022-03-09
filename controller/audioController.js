@@ -48,7 +48,14 @@ const addAudio = (req, res) => {
     });
 };
 
+const getAudio = (req, res) => {
+  const { filename } = req.params;
+  const filePath = "./assets/" + filename;
+  res.json({ filePath });
+};
+
 module.exports = {
   getAudios,
   addAudio,
+  getAudio,
 };

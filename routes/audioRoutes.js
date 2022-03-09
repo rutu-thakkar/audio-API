@@ -2,7 +2,11 @@ const express = require("express");
 const route = express.Router();
 const fileUpload = require("express-fileupload");
 const multer = require("multer");
-const { getAudios, addAudio } = require("../controller/audioController");
+const {
+  getAudios,
+  addAudio,
+  getAudio,
+} = require("../controller/audioController");
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -22,5 +26,6 @@ route.get("/", (req, res) => {
 
 route.get("/getAllAudios", getAudios);
 route.post("/addAudio", upload.single("audioFile"), addAudio);
+route.get("/getAudio/:filename", getAudio);
 
 module.exports = route;
