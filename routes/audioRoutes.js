@@ -8,17 +8,16 @@ const {
   getAudio,
 } = require("../controller/audioController");
 
-// var storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "./assets/");
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, Date.now() + file.filename);
-//   },
-// });
+var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./assets/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + file.originalname);
+  },
+});
 
-route.use(fileUpload());
-var upload = multer();
+var upload = multer({ storage: storage });
 
 route.get("/", (req, res) => {
   res.json({ message: "welcome! This is API endpoint" });
