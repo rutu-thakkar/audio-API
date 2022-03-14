@@ -36,7 +36,7 @@ const addAudio = (req, res) => {
     console.log(file);
     // var fileName = req.files["audioFile"].name;
 
-    file.mv("./assets/uploads/" + req.files["audioFile"].name, function (err) {
+    file.mv("./assets/" + req.files["audioFile"].name, function (err) {
       if (err)
         return res
           .status(400)
