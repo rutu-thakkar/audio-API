@@ -5,12 +5,12 @@ require("dotenv").config();
 const cloudinary = require("cloudinary");
 const streamifier = require("streamifier");
 const { getAudioDurationInSeconds } = require("get-audio-duration");
-route.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  })
-);
+// route.use(
+//   fileUpload({
+//     useTempFiles: true,
+//     tempFileDir: "/tmp/",
+//   })
+// );
 
 cloudinary.config({
   cloud_name: "rutu",
@@ -54,7 +54,7 @@ const addAudio = (req, res) => {
     req.files["audioFile"].mimetype === "audio/vorbis" ||
     req.files["audioFile"].mimetype === "audio/ogg"
   ) {
-    getAudioDurationInSeconds("./assets/uploads/" + req.files["audioFile"].name)
+    getAudioDurationInSeconds("./assets/" + req.files["audioFile"].name)
       .then((duration) => {
         // if (duration < 60) {
         //   duration = duration;

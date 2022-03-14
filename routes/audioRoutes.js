@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const route = express.Router();
 const fileUpload = require("express-fileupload");
 const multer = require("multer");
@@ -18,7 +19,7 @@ var storage = multer.diskStorage({
 });
 
 var upload = multer({ storage: storage });
-
+route.use(fileUpload());
 route.get("/", (req, res) => {
   res.json({ message: "welcome! This is API endpoint" });
 });
